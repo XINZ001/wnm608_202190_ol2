@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>CSS Styleguide</title>
+
+	<link rel="stylesheet" href="../lib/css/styleguide.css">
+	<link rel="stylesheet" href="../lib/css/gridsystem.css">
+	<link rel="stylesheet" href="../css/storetheme.css">
+
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+	<!-- header>h1+p -->
+	<header class="navbar">
+		<div class="container display-flex flex-align-center" style="margin-bottom: 0;">
+			<div class="flex-none">
+				<h1>Styleguide</h1>
+			</div>
+			<div class="flex-stretch"></div>
+			<nav class="flex-none nav">
+				<ul class="container display-flex">
+					<li class="tag"><a href="#tableofcontents">Table of Contents</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header>
+
+	<div class="container" id="tableofcontents">
+		<h2>Table of Contents</h2>
+		<div class="card soft">	
+			<nav class="nav">
+				<ul>
+					<li><a href="#typography">Typography</a></li>
+					<ul>
+						<li><a href="#headings">Headings</a></li>
+						<li><a href="#paragraphs">Paragraphs</a></li>
+					</ul>
+					<li><a href="#cards">Cards</a></li>
+					<li><a href="#viewwindow">ViewWindow</a></li>
+					<li><a href="#navigations">Navigations</a></li>
+					<li><a href="#gridsystem">Grid System</a></li>
+					<li><a href="#flexsystem">Flex System</a></li>
+					<li><a href="#tables">Tables</a></li>
+					<li><a href="#figure">Figure</a></li>
+
+				</ul>
+			</nav>
+		</div>
+	</div>
+		<!-- TYPOGRAPHY -->
+	<div class="container" id="typography">
+		<h2>Typography</h2>
+		<div class="card soft" id="headings">
+			
+			<h3>Heading</h3>
+			<h1>Heading 1</h1>
+			<h2>Heading 2</h2>
+			<h3>Heading 3</h3>
+			<h4>Heading 4</h4>
+			<h5>Heading 5</h5>
+			<h6>Heading 6</h6>
+		</div>
+		<div class="card soft" id="paragraphs">
+			<h3>Paragraphs</h3>
+			<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dignissimos voluptas quibusdam sequi sunt nostrum et voluptates consequuntur magnam animi repudiandae iusto esse harum, quaerat corporis consectetur explicabo numquam doloremque natus.</p>
+			<p>Odit doloribus, praesentium corrupti nulla corporis repellendus, quas sunt quasi illo eos inventore dolores harum libero placeat. Optio voluptatibus voluptate, quasi, id fugiat eos perferendis atque possimus, veniam, dolore quidem.</p>
+			<p>Temporibus corporis architecto est, nihil pariatur ab excepturi id perspiciatis quas laborum aliquid maxime quasi qui amet repudiandae itaque! Assumenda cum nemo corporis, a eligendi eveniet suscipit dolorum, nesciunt aliquid.</p>
+		</div>
+	</div>
+			
+			<!-- CARDS -->
+
+	<div class="container" id="cards">
+		<h2>Cards</h2>
+
+		<div class="grid gap">
+			<div class="col-xs-12 col-md-4">
+				<div class="card">Card</div>
+			</div>	
+
+			<div class="col-xs-12 col-md-4">
+				<div class="card soft">Card Soft</div>
+			</div>	
+
+			<div class="col-xs-12 col-md-4">
+				<div class="card hard">Card Hard</div>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+				<div class="card flat">Card Flat</div>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+				<div class="card dark">Card Dark</div>
+			</div>
+
+			<div class="col-xs-12 col-md-4">
+				<div class="card medium">Card Medium</div>
+			</div>
+		</div>
+
+	</div>
+
+		<!-- VIEW WINDOW -->
+
+		<div class="container" id="viewWindow">
+			<h2>View Window</h2>
+			<div class="view-window" style="background-image: url(../img/img_01.png);"></div>
+		</div>
+
+
+		<!-- NAVIGATIONS -->
+
+
+	<div class="container" id="navigations">
+		<h2>Navigations</h2>
+
+		<script>
+		const makeNav = (classes='') => {
+			const links = ['home','store','about'];
+			let ran = Math.floor(Math.random()*links.length);
+			document.write(`
+			<div>
+				<nav class="${classes}">
+				<ul>
+					${links.reduce((r,o,i)=>{
+						return r+`<li class="${ran==i? 'active':''}"><a href="#">${o}</a></li>`;
+					},'')}
+				</ul>
+			</nav>
+
+			</div>
+			`);
+		}
+		</script>
+
+
+		<div class="card soft">
+			<h3>Basic Nav</h3>
+			<script>makeNav('nav')</script>
+			
+		</div>
+
+		<div class="card soft">
+			<h3>Flex Nav</h3>
+			<script>makeNav('nav nav-flex')</script>
+			
+		</div>
+
+		<div class="card soft">
+			<h3>Stretch Nav</h3>
+			<script>makeNav('nav nav-stretch')</script>
+	
+		</div>
+
+		<div class="card soft">
+			<h3>Pills Nav</h3>
+			<script>makeNav('nav nav-pills')</script>
+		</div>
+
+		<div class="card soft">
+			<h3>Crumbs Nav</h3>
+			<script>makeNav('nav nav-crumbs')</script>
+		</div>
+
+		<div class="card soft">
+			<h3>Material Nav</h3>
+			<script>makeNav('nav nav-material')</script>
+		</div>
+
+		<script>
+			$("#navigations a").on("click", function(e){
+				e.preventDefault();
+				$(this).closest("li").addClass("active")
+				.siblings().removeClass("active")
+			})
+		</script>
+
+	</div>
+
+	<div class="container" id="gridsystem">
+		<h2>Grid System</h2>
+	</div>
+
+	<div class="container" id="flexsystem">
+		<h2>Flex System</h2>
+	</div>
+
+	<!-- TABLES -->
+		
+		<script>
+			const makeTable = (classes = '') => {
+				const head = ['ID', 'Office', 'Name', 'Email', 'Phone'];
+				const body = [
+
+					['522', 'Hamilton Cline', 'hcline@academyart.edu', '555-2424'],
+					['512', 'Fred McHale', 'fmhale@academyart.edu', '555-2424'],
+					['522', 'Micheal Catanzaro', 'mcatanzaro@academyart.edu', '555-2424'],
+					['514', 'Andrea Pimentel', 'apimentel@academyart.edu', '555-2424'],
+					['516', 'DC Scarpelli', 'dscarpelli@academyart.edu', '555-2424'],
+
+				];
+
+				// let ran = Math.floor(Math.random()*link.length);
+				document.write(`
+					<table class="${classes}">
+						<thead><tr>${head.reduce((r,o)=> r + `<th>${o}</th>`, '')}</tr></thead>
+						<tbody>${body.reduce((r,o,i) => r+ 
+							`<tr>${
+								[i+1,...o].reduce((r,o) => r+`<td>${o}</td>`, '')
+							}</tr>`, '')}
+						</tbody>
+					</table>
+				`)
+			}
+		</script>
+
+		<div class="container" id="tables">
+			<h2>Tables</h2>
+			<div class="card soft">
+				<h3>Basic Table</h3>
+				<script>makeTable("table")</script>
+			</div>
+
+			<div class="card soft">
+				<h3>Striped Table</h3>
+				<script>makeTable("table striped")</script>
+			</div>
+
+			<div class="card soft">
+				<h3>Striped Lined Vetrical Table</h3>
+				<script>makeTable("table lined vertical")</script>
+			</div>
+
+			<div class="card soft">
+				<h3>Striped Lined Horizontal Table</h3>
+				<script>makeTable("table lined horizontal")</script>
+			</div>
+
+			<div class="card soft">
+				<h3>Lined Border Table</h3>
+				<script>makeTable("table lined border")</script>
+			</div>
+
+			<div class="card soft">
+				<h3>Striped Lined All Table</h3>
+				<script>makeTable("table lined all")</script>
+			</div>
+
+			<div class="card soft">
+				<h3>Cominations Table</h3>
+				<script>makeTable("table lined vertical border striped")</script>
+			</div>
+
+		</div>
+
+		<!-- FIGURE -->
+
+		<div class="container" id="figure">
+			<h2>Figure</h2>
+
+			<div class="card soft">
+				<h3>Basic Figure</h3>
+				<figure class="figure">
+					<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+					<figcaption>Product</figcaption>
+				</figure>
+
+			</div>
+
+
+			<!-- FIGURE GRID -->
+			
+				<div class="container">
+					<h2>Figure Gride</h2>
+								<div class="grid gap">
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>Product</figcaption>
+										</figure>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>Product</figcaption>
+										</figure>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>Product</figcaption>
+										</figure>
+									</div>
+								</div>
+				</div>
+			
+
+			<!-- PRODUCT GRID  -->
+				<div class="container">
+					<h2>Product Grid</h2>
+								<div class="grid gap">
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure product">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>
+												<div>Product Name</div>
+												<div>$3.99</div>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure product">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>
+												<div>Product Name</div>
+												<div>$3.99</div>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure product">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>
+												<div>Product Name</div>
+												<div>$3.99</div>
+											</figcaption>
+										</figure>
+									</div>
+								</div></div>
+
+			<!-- PRODUCT OVERLAY CENTER -->
+			
+				<div class="container"><h2>Product Overlay</h2>
+								<div class="grid gap">
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure product-overlay">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>
+												<div class="caption-body">
+													<div>Product Name</div>
+													<div>$3.99</div>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure product-overlay">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>
+												<div class="caption-body">
+													<div>Product Name</div>
+													<div>$3.99</div>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+									<div class="col-xs-12 col-md-4">
+										<figure class="figure product-overlay">
+											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+											<figcaption>
+												<div class="caption-body">
+													<div>Product Name</div>
+													<div>$3.99</div>
+												</div>
+											</figcaption>
+										</figure>
+									</div>
+								</div></div>
+			
+			
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

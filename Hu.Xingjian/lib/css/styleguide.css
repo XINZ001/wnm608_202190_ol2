@@ -10,6 +10,10 @@
 	--color-neutral-medium:#999;	
 	--color-neutral-dark:#555;
 
+	--color-main-light:blue;
+	--color-main-medium:blue;	
+	--color-main-dark:blue;
+
 	--color-theme:#F9FE02;
 
 	--color-black:#000;
@@ -24,7 +28,7 @@
 }
 
 body {
-	 margin:0;
+	 margin-top:100px;
 	 font-size:100%;
 	 font-family:var(--font-sans);
 	 
@@ -38,13 +42,14 @@ h5,
 h6 {
 	font-family: var(--font-sans);
 	font-weight: 400;
-	margin: 0;
+	margin-bottom: 20px;
+	margin-top: 0;
 }
 
 
 a {
 	color:var(--color-black);
-	font-weight:bold;
+	font-weight:regular;
 	text-decoration:none;
 }
 
@@ -54,7 +59,7 @@ a:hover{
 
 p{
 	margin: 0;
-	padding: 0;
+	padding-top: 1em;
 }
 
 header{
@@ -75,6 +80,7 @@ header{
 	 max-width:760px;
 	 margin-right: auto;
 	 margin-left: auto;
+	 margin-bottom: 40px;
 }
 
 .display-flex { display:flex; }
@@ -93,12 +99,99 @@ header{
 
 /* component class */
 
+
+/* Nav */
 .nav ul {
 	list-style-type: none;
 	margin-top: 0;
 	margin-bottom: 0;
-
+	padding: 0;
 }
+
+
+	.nav a {
+		display: block;
+		padding: 0.2em 0.5em;
+	}
+	.nav a:hover {
+		background-color: var(--color-main-medium);
+		color: var(--color-white);
+		text-decoration: none;
+	}	
+
+	.nav .active a {
+		background-color: var(--color-main-light);
+		color: inherit;
+		text-decoration: none;
+	}
+
+.nav-material ul,
+.nav-crumbs ul,
+.nav-stretch ul,
+.nav-pills ul,
+.nav-flex ul{
+	display: flex;
+}
+
+.nav-material li,
+.nav-stretch li{
+	flex:1 1 auto;
+	text-align: center;
+}
+
+.nav-pills a {
+	border-radius: 2em;
+	padding: 0.5em 1em;
+}
+
+.nav-crumbs a {
+	display: inline-block;
+}
+
+.nav-crumbs .active a,
+.nav-crumbs a:hover {
+	background-color: transparent;
+	color: inherit;
+	text-decoration: underline;
+}
+
+.nav-crumbs li:not(:first-child)::before {
+	content: '/';
+}
+
+
+.nav-material a {
+	padding: 0.5em 1em;
+	position: relative;
+}
+
+.nav-material a:hover {
+	background-color: var(--color-neutral-light);
+	color: inherit;
+}
+
+.nav-material a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	background-color: var(--color-main-medium);
+	transition: all 0.3s;
+}
+
+.nav-material .active a::after {
+	height:4px ;
+}
+
+.nav-material .active a {
+	background-color: transparent;
+	color: inherit;
+}
+
+
+
 
 
 .navbar {
@@ -121,26 +214,63 @@ header{
 	}
 
 
+/* Table */
+
+.table{
+    width: 100%;
+    border-collapse: collapse;
+}
+.table th,
+.table td {
+    text-align: left;
+    padding: 0.2em 0.5em;
+}
+
+
+.table.striped tbody tr:nth-child(odd){
+    background-color: var(--color-neutral-light);
+}
+
+.table.lined.all th:not(:first-child),
+.table.lined.all td:not(:first-child),
+.table.lined.vertical th:not(:first-child),
+.table.lined.vertical td:not(:first-child) {
+    border-left: 1px solid var(--color-neutral-medium );
+}
+
+.table.lined.all tbody tr ,
+.table.lined.horizontal tbody tr {
+    border-top: 1px solid var(--color-neutral-medium );
+}
+
+.table.lined.all,
+.table.lined.border {
+    border: 1px solid var(--color-neutral-medium );
+}
+
+
+
+
 /* card */
 .card {
 	background-color: var(--color-white);
 	margin-top: 1em;
 	margin-bottom: 2em;
-	
+	padding:1.5em  ;
 
 	overflow: hidden;
 	position: relative;
 	transition: transform 0.2s ease-in-out;
 }
+	.card.close {
+		border-radius: 0.5em;
+		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+		padding: 0;
+	}
+
 	.card.soft {
 		border-radius: 0.5em;
 		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	}
-
-	.card.soft2 {
-		border-radius: 0.5em;
-		box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-		padding: 1.5em;
 	}
 
 	.card.hard {
@@ -150,16 +280,19 @@ header{
 
 	.card.dark {
 		background-color: var(--color-neutral-dark);
-		color: var(color-neutral-light);
+		color: var(color-neutral-light);		
+
 	}
 
 	.card.light {
 		border-radius: 0.5em;
 		border: 2px solid var(--color-neutral-light);
+
 	}
 
 	.card.medium {
 		background-color: var(--color-neutral-medium);
+
 	}
 
 	.card.flat{
@@ -171,8 +304,32 @@ header{
 }
 
 
+/* Figure */
+
+.figure {
+    margin: 0;
+    background-color: var(--color-white);
+}
+.figure img {
+    width: 100%;
+    vertical-align: text-bottom;
+}
+.figure figcaption {
+    padding: 1em;
+}
+
+
+}
+.figure.product img {
+    height: 100%;
+    object-fit: contain;
+}
+
+
+
+
 /* tag */
-.tag{
+/*.tag{
 	margin: 1em 0.5em;
 	border: 2px solid var(--color-black);
 	border-radius:2em;
@@ -181,11 +338,11 @@ header{
 .tag:hover{
 	background-color: var(--color-theme);
 }
-
+*/
 
 
 .view-window {
-	height: 80vh;
+	height: 50vh;
 	position: relative;
 	overflow: hidden;
 	background-size: cover;
@@ -208,8 +365,12 @@ img {
 }
 
 
+/* Small Classes */
 
-
+.media-image {
+	max-width: 100%;
+	vertical-align: text-bottom;
+}
 
 
 
