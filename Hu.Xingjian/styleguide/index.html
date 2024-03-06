@@ -45,12 +45,18 @@
 					<li><a href="#flexsystem">Flex System</a></li>
 					<li><a href="#tables">Tables</a></li>
 					<li><a href="#figure">Figure</a></li>
-
+					<li><a href="#forms">Forms</a></li>	
+					<ul>
+						<li><a href="#inputs">Inputs</a></li>
+						<li><a href="#label">Labels</a></li>
+						<li><a href="#controls">Controls</a></li>
+						<li><a href="#buttons">Buttons</a></li>
+					</ul>
 				</ul>
 			</nav>
 		</div>
 	</div>
-		<!-- TYPOGRAPHY -->
+	<!-- TYPOGRAPHY -->
 	<div class="container" id="typography">
 		<h2>Typography</h2>
 		<div class="card soft" id="headings">
@@ -70,8 +76,8 @@
 			<p>Temporibus corporis architecto est, nihil pariatur ab excepturi id perspiciatis quas laborum aliquid maxime quasi qui amet repudiandae itaque! Assumenda cum nemo corporis, a eligendi eveniet suscipit dolorum, nesciunt aliquid.</p>
 		</div>
 	</div>
-			
-			<!-- CARDS -->
+
+	<!-- CARDS -->
 
 	<div class="container" id="cards">
 		<h2>Cards</h2>
@@ -104,37 +110,37 @@
 
 	</div>
 
-		<!-- VIEW WINDOW -->
+	<!-- VIEW WINDOW -->
 
-		<div class="container" id="viewWindow">
-			<h2>View Window</h2>
-			<div class="view-window" style="background-image: url(../img/img_01.png);"></div>
-		</div>
+	<div class="container" id="viewWindow">
+		<h2>View Window</h2>
+		<div class="view-window" style="background-image: url(../img/img_01.png);"></div>
+	</div>
 
 
-		<!-- NAVIGATIONS -->
+	<!-- NAVIGATIONS -->
 
 
 	<div class="container" id="navigations">
 		<h2>Navigations</h2>
 
 		<script>
-		const makeNav = (classes='') => {
-			const links = ['home','store','about'];
-			let ran = Math.floor(Math.random()*links.length);
-			document.write(`
-			<div>
-				<nav class="${classes}">
-				<ul>
+			const makeNav = (classes='') => {
+				const links = ['home','store','about'];
+				let ran = Math.floor(Math.random()*links.length);
+				document.write(`
+					<div>
+					<nav class="${classes}">
+					<ul>
 					${links.reduce((r,o,i)=>{
 						return r+`<li class="${ran==i? 'active':''}"><a href="#">${o}</a></li>`;
 					},'')}
-				</ul>
-			</nav>
+					</ul>
+					</nav>
 
-			</div>
-			`);
-		}
+					</div>
+					`);
+			}
 		</script>
 
 
@@ -153,7 +159,7 @@
 		<div class="card soft">
 			<h3>Stretch Nav</h3>
 			<script>makeNav('nav nav-stretch')</script>
-	
+
 		</div>
 
 		<div class="card soft">
@@ -190,191 +196,385 @@
 	</div>
 
 	<!-- TABLES -->
-		
-		<script>
-			const makeTable = (classes = '') => {
-				const head = ['ID', 'Office', 'Name', 'Email', 'Phone'];
-				const body = [
 
-					['522', 'Hamilton Cline', 'hcline@academyart.edu', '555-2424'],
-					['512', 'Fred McHale', 'fmhale@academyart.edu', '555-2424'],
-					['522', 'Micheal Catanzaro', 'mcatanzaro@academyart.edu', '555-2424'],
-					['514', 'Andrea Pimentel', 'apimentel@academyart.edu', '555-2424'],
-					['516', 'DC Scarpelli', 'dscarpelli@academyart.edu', '555-2424'],
+	<script>
+		const makeTable = (classes = '') => {
+			const head = ['ID', 'Office', 'Name', 'Email', 'Phone'];
+			const body = [
+
+				['522', 'Hamilton Cline', 'hcline@academyart.edu', '555-2424'],
+				['512', 'Fred McHale', 'fmhale@academyart.edu', '555-2424'],
+				['522', 'Micheal Catanzaro', 'mcatanzaro@academyart.edu', '555-2424'],
+				['514', 'Andrea Pimentel', 'apimentel@academyart.edu', '555-2424'],
+				['516', 'DC Scarpelli', 'dscarpelli@academyart.edu', '555-2424'],
 
 				];
 
 				// let ran = Math.floor(Math.random()*link.length);
-				document.write(`
-					<table class="${classes}">
-						<thead><tr>${head.reduce((r,o)=> r + `<th>${o}</th>`, '')}</tr></thead>
-						<tbody>${body.reduce((r,o,i) => r+ 
-							`<tr>${
-								[i+1,...o].reduce((r,o) => r+`<td>${o}</td>`, '')
-							}</tr>`, '')}
-						</tbody>
-					</table>
+			document.write(`
+				<table class="${classes}">
+				<thead><tr>${head.reduce((r,o)=> r + `<th>${o}</th>`, '')}</tr></thead>
+				<tbody>${body.reduce((r,o,i) => r+ 
+					`<tr>${
+						[i+1,...o].reduce((r,o) => r+`<td>${o}</td>`, '')
+					}</tr>`, '')}
+				</tbody>
+				</table>
 				`)
-			}
-		</script>
+		}
+	</script>
 
-		<div class="container" id="tables">
-			<h2>Tables</h2>
-			<div class="card soft">
-				<h3>Basic Table</h3>
-				<script>makeTable("table")</script>
-			</div>
+	<div class="container" id="tables">
+		<h2>Tables</h2>
+		<div class="card soft">
+			<h3>Basic Table</h3>
+			<script>makeTable("table")</script>
+		</div>
 
-			<div class="card soft">
-				<h3>Striped Table</h3>
-				<script>makeTable("table striped")</script>
-			</div>
+		<div class="card soft">
+			<h3>Striped Table</h3>
+			<script>makeTable("table striped")</script>
+		</div>
 
-			<div class="card soft">
-				<h3>Striped Lined Vetrical Table</h3>
-				<script>makeTable("table lined vertical")</script>
-			</div>
+		<div class="card soft">
+			<h3>Striped Lined Vetrical Table</h3>
+			<script>makeTable("table lined vertical")</script>
+		</div>
 
-			<div class="card soft">
-				<h3>Striped Lined Horizontal Table</h3>
-				<script>makeTable("table lined horizontal")</script>
-			</div>
+		<div class="card soft">
+			<h3>Striped Lined Horizontal Table</h3>
+			<script>makeTable("table lined horizontal")</script>
+		</div>
 
-			<div class="card soft">
-				<h3>Lined Border Table</h3>
-				<script>makeTable("table lined border")</script>
-			</div>
+		<div class="card soft">
+			<h3>Lined Border Table</h3>
+			<script>makeTable("table lined border")</script>
+		</div>
 
-			<div class="card soft">
-				<h3>Striped Lined All Table</h3>
-				<script>makeTable("table lined all")</script>
-			</div>
+		<div class="card soft">
+			<h3>Striped Lined All Table</h3>
+			<script>makeTable("table lined all")</script>
+		</div>
 
-			<div class="card soft">
-				<h3>Cominations Table</h3>
-				<script>makeTable("table lined vertical border striped")</script>
-			</div>
+		<div class="card soft">
+			<h3>Cominations Table</h3>
+			<script>makeTable("table lined vertical border striped")</script>
+		</div>
+
+	</div>
+
+	<!-- FIGURE -->
+
+	<div class="container" id="figure">
+		<h2>Figure</h2>
+
+		<div class="card soft">
+			<h3>Basic Figure</h3>
+			<figure class="figure">
+				<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+				<figcaption>Product</figcaption>
+			</figure>
 
 		</div>
 
-		<!-- FIGURE -->
 
-		<div class="container" id="figure">
-			<h2>Figure</h2>
+		<!-- FIGURE GRID -->
 
-			<div class="card soft">
-				<h3>Basic Figure</h3>
-				<figure class="figure">
-					<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-					<figcaption>Product</figcaption>
-				</figure>
-
-			</div>
-
-
-			<!-- FIGURE GRID -->
-			
-				<div class="container">
-					<h2>Figure Gride</h2>
-								<div class="grid gap">
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>Product</figcaption>
-										</figure>
-									</div>
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>Product</figcaption>
-										</figure>
-									</div>
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>Product</figcaption>
-										</figure>
-									</div>
-								</div>
+		<div class="container">
+			<h2>Figure Gride</h2>
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure">
+						<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+						<figcaption>Product</figcaption>
+					</figure>
 				</div>
-			
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure">
+						<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+						<figcaption>Product</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure">
+						<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+						<figcaption>Product</figcaption>
+					</figure>
+				</div>
+			</div>
+		</div>
 
-			<!-- PRODUCT GRID  -->
-				<div class="container">
-					<h2>Product Grid</h2>
-								<div class="grid gap">
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure product">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>
-												<div>Product Name</div>
-												<div>$3.99</div>
-											</figcaption>
-										</figure>
-									</div>
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure product">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>
-												<div>Product Name</div>
-												<div>$3.99</div>
-											</figcaption>
-										</figure>
-									</div>
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure product">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>
-												<div>Product Name</div>
-												<div>$3.99</div>
-											</figcaption>
-										</figure>
-									</div>
-								</div></div>
+
+		<!-- PRODUCT GRID  -->
+		<div class="container">
+			<h2>Product Grid</h2>
+			<div class="grid gap">
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product">
+						<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+						<figcaption>
+							<div>Product Name</div>
+							<div>$3.99</div>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product">
+						<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+						<figcaption>
+							<div>Product Name</div>
+							<div>$3.99</div>
+						</figcaption>
+					</figure>
+				</div>
+				<div class="col-xs-12 col-md-4">
+					<figure class="figure product">
+						<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+						<figcaption>
+							<div>Product Name</div>
+							<div>$3.99</div>
+						</figcaption>
+					</figure>
+				</div>
+			</div></div>
 
 			<!-- PRODUCT OVERLAY CENTER -->
 			
-				<div class="container"><h2>Product Overlay</h2>
-								<div class="grid gap">
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure product-overlay">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>
-												<div class="caption-body">
-													<div>Product Name</div>
-													<div>$3.99</div>
-												</div>
-											</figcaption>
-										</figure>
-									</div>
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure product-overlay">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>
-												<div class="caption-body">
-													<div>Product Name</div>
-													<div>$3.99</div>
-												</div>
-											</figcaption>
-										</figure>
-									</div>
-									<div class="col-xs-12 col-md-4">
-										<figure class="figure product-overlay">
-											<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
-											<figcaption>
-												<div class="caption-body">
-													<div>Product Name</div>
-													<div>$3.99</div>
-												</div>
-											</figcaption>
-										</figure>
-									</div>
-								</div></div>
-			
-			
+			<div class="container">
+				<h2>Product Overlay</h2>
+				<div class="grid gap">
+					<div class="col-xs-12 col-md-4">
+						<figure class="figure product-overlay">
+							<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+							<figcaption>
+								<div class="caption-body">
+									<div>Product Name</div>
+									<div>$3.99</div>
+								</div>
+							</figcaption>
+						</figure>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<figure class="figure product-overlay">
+							<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+							<figcaption>
+								<div class="caption-body">
+									<div>Product Name</div>
+									<div>$3.99</div>
+								</div>
+							</figcaption>
+						</figure>
+					</div>
+					<div class="col-xs-12 col-md-4">
+						<figure class="figure product-overlay">
+							<img src="https://via.placeholder.com/400x400?text=Coming Soon"  alt=""/>
+							<figcaption>
+								<div class="caption-body">
+									<div>Product Name</div>
+									<div>$3.99</div>
+								</div>
+							</figcaption>
+						</figure>
+					</div>
+				</div></div>
 
-</body>
-</html>
+			<!-- FORM -->
+
+		<div class="container" id="forms">
+			<h2>Forms</h2>
+
+			<h2>Inputs</h2>
+
+			<div class="card soft">
+
+				<div class="container">
+					<h3>Default Inputs</h3>
+					<form action="" method="post">
+						<input type="text" /><br />
+						<input type="number" /><br />
+						<input type="password" /><br />
+						<input type="email" /><br />
+						<input type="url" /><br />
+						<input type="datetime-local" /><br />
+						<input type="date" /><br />
+						<input type="search" /><br />
+					</form>
+				</div>
+
+				<div class="container">
+					<h3>Form Input</h3>
+					<form>
+						<input type="text" placeholder="Text" class="form-input" />
+						<input type="number" placeholder="Number" class="form-input" />
+						<input type="password" placeholder="Password" class="form-input" />
+						<input type="search" placeholder="Search" class="form-input" />
+					</form>
+				</div>
+
+
+				<div class="container">
+					<h3>Form Label</h3>
+					<form>
+						<label for="" class="form-label">Phone</label>
+						<input type="number" placeholder="Number" class="form-input" />
+						<label for="" class="form-label">Password</label>
+						<input type="password" placeholder="Password" class="form-input" />
+						<label for="" class="form-label">Search</label>
+						<input type="search" placeholder="Search" class="form-input" />
+					</form>
+				</div>
+
+
+				<div class="container">
+					<h3 id="controls">Form Control</h3>
+					<form>
+						<div class="form-control">
+							<label for="" class="form-label">Name</label>
+							<input type="text" placeholder="Text" class="form-input" />
+						</div>
+						<div class="form-control">
+							<label for="" class="form-label">Phone</label>
+							<input type="number" placeholder="Number" class="form-input" />
+						</div>
+						<div class="form-control">
+							<label for="" class="form-label">Password</label>
+							<input type="password" placeholder="Password" class="form-input" />
+						</div>
+						<div class="form-control display-flex flex-align-center" >
+							<div class="flex-none">
+								<label for="" class="form-label">Search</label>
+							</div>
+							<div class="flex-stretch">
+								<input type="search" placeholder="Search" class="form-input flex-stretch" />
+							</div>
+							<div class="flex-none">
+								<label for="" class="form-label">Search</label>
+							</div>
+							<div class="flex-stretch">
+								<input type="search" placeholder="Search" class="form-input flex-stretch" />
+							</div>
+						</div>
+					</form>
+				</div>
+
+
+				</div>
+
+				<h3 id="buttons">Buttons</h3>
+					<div class="card soft">
+						<h3>Default Buttons</h3>
+						<button>BUTTON</button>
+
+						<h3>Default Buttons</h3>
+						<div class="form-control">
+							<button class="form-button">BUTTON</button>
+						</div>
+						<div class="form-control">
+							<input type="button" class="form-button" value="Input">
+						</div>
+						<div class="form-control">
+							<a href="#" class="form-button">ANCHOR</a>
+						</div>
+					</div>
+
+				<h2 id="hotdog">Hotdog</h2>
+					<div class="card soft">
+						<div class="form-control">
+							<form>
+								<input type="search" class="hotdog" placeholder="Search" />
+							</form>
+						</div>
+						<div class="form-control">
+							<form>
+								<input type="search" class="hotdog dark" placeholder="Search" />
+							</form>
+						</div>
+						<div class="form-control">
+							<form class="card dark">
+								<input type="search" class="hotdog light" placeholder="Search" />
+							</form>
+						</div>
+
+						<div class="form-control">
+							<form class="hotdog">
+								<span>&#128269;</span>
+								<input type="search" placeholder="Search" />
+							</form>
+						</div>
+					</div>
+
+			<!-- select -->
+			<h2 id="select">Select</h2>
+			<div class="card soft">
+				<div class="container">
+					<div class="form-select">
+						<select>
+							<option>1</option>
+							<option>2</option>
+							<option>3</option>
+							<option>4</option>
+						</select>
+					</div></div>
+
+					<div class="container">
+						<div class="display-flex">
+						<div class="flex-stretch"> </div>
+						<div class="flex-none">
+
+							<div class="form-select">
+								<select>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+								</select>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				</div>
+
+
+
+						<!-- CHECK BOX INPUT -->
+						<h2 id="checkboxes">Check Boxes</h2>
+						<div class="card soft">
+							<div class="container">
+								<label>Label <input type="checkbox" id="input-1" /> </label>
+									<label for="input-1">Label</label></div>
+
+							<div class="container">
+								<h3>Heart Checkbox</h3>
+									<div class="favorite">
+										<input id="heart-example" type="checkbox" class="hidden">
+										<label for="heart-example">&hearts;</label>
+									</div>
+								</div>
+
+							<h3>Toggle</h3>
+							<div class="toggle">
+								<input id="toggle-1" type="checkbox" class="hidden">
+								<label for="toggle-1"></label>
+							</div>
+
+							<div class="display-flex flex-align-center">
+								<div class="flex-stretch"> 
+									<label for="toggle-2" class="form-label"><h2>Display Worning?</h2></label>
+								</div>
+								<div class="flex-none">
+									<div class="toggle" style="font-size: 1.5em;">
+										<input id="toggle-2" type="checkbox" class="hidden">
+										<label for="toggle-2"></label>
+									</div>
+								</div>
+							</div>
+
+							
+						</div>
+
+		</body>
+		</html>
 
 
 
