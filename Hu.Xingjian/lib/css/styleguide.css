@@ -352,12 +352,19 @@ header{
 	background-attachment: fixed ;
 }
 
+li {
+    list-style-type: none;
+}
 
 img {
   width: 100%;
   height: auto; 
 }
 
+.fixed-width-img{
+	width: 100px;
+    height: auto;
+}
 
 
 .lable {
