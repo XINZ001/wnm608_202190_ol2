@@ -75,11 +75,11 @@ function showUserPage($user) {
 		</ul>
 	</nav>
 	<section id="userPageInfo" class="display-flex flex-justify-space-between">
-			<ul class="display-flex flex-align-end gap flex-align-end">
-				<li>
+			<ul class="display-flex flex-align-end gap flex-align-end" style="padding: 0;">
+				<li class="flex-none">
 					<img src="$user->imgSRC" alt="user image" class="fixed-width-img">
 				</li>
-				<li>
+				<li class="flex-stretch">
 					<h2>$user->name</h2>
 					<div>
 						<strong>Type:</strong>
@@ -136,8 +136,8 @@ function showUserPage($user) {
 <body>
 	<!-- admin page navigation bar -->
 		<header class="navbar">
-		 <div class="container display-flex">
-		 	<div class="flax-none">User Admin</div>
+		 <div class="container display-flex flex-align-center">
+		 	<div class="flax-none"><h1>User Admin</h1></div>
 		 	<div class="flex-stretch"></div>
 		 	<nav class="nav nav-flex flax-none">
 		 		<ul>

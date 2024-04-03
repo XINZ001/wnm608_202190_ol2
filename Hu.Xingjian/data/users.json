@@ -4,27 +4,27 @@
 		"type":"Student",
 		"email":"kkardan2@art.edu",
 		"classes":[608,613],
-		"imgSRC":"../img/Avatar_1.png"
+		"imgSRC":"../img/avatar_1.png"
 	},
 	{
 		"name":"Bahar Hesabi",
 		"type":"Movie Editor",
 		"email":"bhesabi@gmail.com",
 		"classes":[608,613,123,911],
-		"imgSRC":"../img/Avatar_2.png"
+		"imgSRC":"../img/avatar_2.png"
 	},
 	{
 		"name":"Masoud Moharami",
 		"type":"Software Developer",
 		"email":"mmoharammi@gmail.com",
 		"classes":[324,1011,911],
-		"imgSRC":"../img/Avatar_3.png"
+		"imgSRC":"../img/avatar_3.png"
 	},
 	{
 		"name":"Jason Li",
 		"type":"Software Developer",
 		"email":"mmoharammi@gmail.com",
 		"classes":[324,1011,911],
-		"imgSRC":"../img/Avatar_4.png"
+		"imgSRC":"../img/avatar_4.png"
 	}
 ]

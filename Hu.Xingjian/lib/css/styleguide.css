@@ -49,6 +49,7 @@ h6 {
 }
 
 
+
 a {
 	color:var(--color-black);
 	font-weight:regular;
@@ -96,6 +97,7 @@ header{
 
 .flex-align-center{align-items: center;}
 .flex-justify-center{justify-content: center;}
+.gap {gap: 10px}
 
 
 
