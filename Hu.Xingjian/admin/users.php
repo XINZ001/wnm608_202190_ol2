@@ -67,68 +67,68 @@ function showUserPage($user) {
 	//print_p($user);
 	$delete = $id =="new" ? "" : "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>Delete</a>";
 	//heredoc
-	echo <<<HTML
-	<nav class="nav nav-crumbs">
-		<ul>
-			<li class="flex-stretch"><a href="{$_SERVER['PHP_SELF']}">< Back</a></li>
-			<li class="flex-none">$delete</li>
-		</ul>
-	</nav>
-	<section id="userPageInfo" class="display-flex flex-justify-space-between">
-			<ul class="display-flex flex-align-end gap flex-align-end" style="padding: 0;">
-				<li class="flex-none">
-					<img src="$user->imgSRC" alt="user image" class="fixed-width-img">
-				</li>
-				<li class="flex-stretch">
-					<h2>$user->name</h2>
+echo <<<HTML
+<nav class="nav nav-crumbs">
+	<ul>
+		<li class="flex-stretch"><a href="{$_SERVER['PHP_SELF']}">< Back</a></li>
+		<li class="flex-none">$delete</li>
+	</ul>
+</nav>
+<section id="userPageInfo" class="display-flex flex-justify-space-between">
+		<ul class="display-flex flex-align-end gap flex-align-end" style="padding: 0;">
+			<li class="flex-none">
+				<img src="$user->imgSRC" alt="user image" class="fixed-width-img">
+			</li>
+			<li class="flex-stretch">
+				<h2>$user->name</h2>
+				<div>
+					<strong>Type:</strong>
+					<span>$user->type</span>
+				</div>
 					<div>
-						<strong>Type:</strong>
-						<span>$user->type</span>
-					</div>
-						<div>
-						<strong>Email:</strong>
-						<span>$user->email</span>
-					</div>
-						<div>
-						<strong>Classes:</strong>
-						<span>$classes</span>
-					</div>
-				</li>
-			</ul>
-			
-	</section>
-	
-	<form method="post" action="{$_SERVER['PHP_SELF']}?id=$id&action=$createorupdate">
-				<h2>$addoredit User</h2>
-				<div class="form-control">
-					<label for="" class="form-label" for="user-name">Full Name</label>
-					<input type="text" placeholder="Enter the User Name" class="form-input" name="user-name" id="user-name" value="$user->name" />
+					<strong>Email:</strong>
+					<span>$user->email</span>
 				</div>
-				<div class="form-control">
-					<label for="" class="form-label" for="user-type">Type</label>
-					<input type="text" placeholder="Enter the User Type" class="form-input" name="user-type" id="user-type" value="$user->type" />
+					<div>
+					<strong>Classes:</strong>
+					<span>$classes</span>
 				</div>
-				<div class="form-control">
-					<label for="" class="form-label" for="user-email">Email</label>
-					<input type="text" placeholder="Enter the User Email" class="form-input" name="user-email" id="user-email" value="$user->email" />
-				</div>
-				<div class="form-control">
-					<label for="" class="form-label" for="user-classes">Classes</label>
-					<input type="text" placeholder="Enter the User Classes, Comma Seperate" class="form-input" name="user-classes" id="user-classes" value="$classes" />
-				</div>
-				<div class="form-control">
-					<input type="submit" class="form-button" value="UPDATE">
-				</div>
-			</form>
+			</li>
+		</ul>
+		
+</section>
 
-	HTML;
+<form method="post" action="{$_SERVER['PHP_SELF']}?id=$id&action=$createorupdate">
+			<h2>$addoredit User</h2>
+			<div class="form-control">
+				<label for="" class="form-label" for="user-name">Full Name</label>
+				<input type="text" placeholder="Enter the User Name" class="form-input" name="user-name" id="user-name" value="$user->name" />
+			</div>
+			<div class="form-control">
+				<label for="" class="form-label" for="user-type">Type</label>
+				<input type="text" placeholder="Enter the User Type" class="form-input" name="user-type" id="user-type" value="$user->type" />
+			</div>
+			<div class="form-control">
+				<label for="" class="form-label" for="user-email">Email</label>
+				<input type="text" placeholder="Enter the User Email" class="form-input" name="user-email" id="user-email" value="$user->email" />
+			</div>
+			<div class="form-control">
+				<label for="" class="form-label" for="user-classes">Classes</label>
+				<input type="text" placeholder="Enter the User Classes, Comma Seperate" class="form-input" name="user-classes" id="user-classes" value="$classes" />
+			</div>
+			<div class="form-control">
+				<input type="submit" class="form-button" value="UPDATE">
+			</div>
+		</form>
+
+HTML;
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<?php include "../parts/meta.php" ?>
+	<?php include "../parts/meta.php"; ?>
 
 	<!-- Page Title -->
 	<title>User Admin Page</title>
@@ -168,7 +168,7 @@ function showUserPage($user) {
 					for($i=0;$i<count($users);$i++){
 
 						echo "<li>
-							<a href='users.php?id=$i'>{$users[$i]->name}</a>
+							<a href='http://xingjian-hu.com/wnm608/Hu.Xingjian/admin/users.php?id=$i'>{$users[$i]->name}</a>
 						</li>";
 					}
 
