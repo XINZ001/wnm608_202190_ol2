@@ -44,7 +44,7 @@ h5,
 h6 {
 	font-family: var(--font-sans);
 	font-weight: 400;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 	margin-top: 0;
 }
 
@@ -62,7 +62,7 @@ a:hover{
 
 p{
 	margin: 0;
-	padding-top: 1em;
+	
 }
 
 header{
@@ -80,7 +80,7 @@ header{
 /* layout classes */
 
 .container {
-	 max-width:760px;
+	 max-width:800px;
 	 margin-right: auto;
 	 margin-left: auto;
 /*	 margin-bottom: 40px;*/
@@ -99,7 +99,18 @@ header{
 .flex-justify-center{justify-content: center;}
 .gap {gap: 10px}
 
+.gapL {height: 32px}
 
+.line {
+	height: 1px;
+	background-color: var(--color-neutral-light);
+}
+
+.vertical {
+	  flex-direction: column;
+	    justify-content: space-between;
+	    height: 100%;
+}
 
 /* component class */
 
@@ -303,9 +314,7 @@ header{
 		padding: 0;
 	}
 
-.card:hover {
-  transform: scale(1.02);
-}
+
 
 
 /* Figure */
@@ -355,7 +364,7 @@ header{
 }
 
 li {
-    list-style-type: none;
+    
 }
 
 img {
@@ -396,7 +405,6 @@ img {
     margin: 1em 0;
 }
 
-
 .form-select > select,
 .hotdog input,
 .hotdog,
@@ -404,26 +412,30 @@ img {
 .form-input,
 .form-item {
     display:  inline-block;
-    background-color: transparent;
+    background-color: var(--color-neutral-light);
     border-width: 0;
     font: inherit;
     -webkit-appearance:  none;
     color: inherit;
     width: 100%;
+    height: 44px;
+    border-radius: 8px;
+    padding-left: 16px;
     outline: 0;
 }
 
 	/* When edit */
 .form-input:focus {
-    border-bottom: 1px solid var(--color-neutral-medium);
+    border: 1px solid var(--color-neutral-medium);
 }
 
 	/* to delete the original form */
 .form-label {
-    font-size: 0.8em;
+    font-size: 1em;
     color: var(--color-primary-dark);
     display: block;
     width: 100%;
+    margin-bottom: 8px;
 }
 
 .form-button {
