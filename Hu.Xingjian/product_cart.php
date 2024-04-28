@@ -1,7 +1,11 @@
 <?php
 	include_once "lib/php/functions.php";
+	include_once "parts/templates.php";
 
-	$cart = makeQuery(makeConn(),"SELECT * FROM products WHERE id IN (1, 2, 5);")
+	//$cart = makeQuery(makeConn(),"SELECT * FROM products WHERE id IN (1, 2, 5);")
+
+	$cart_items = getCartItems();
+	//print_p($cart_items);
 ?>
 
 
@@ -23,12 +27,18 @@
 			<div class="grid gap">
 				<div class="col-xs-12 col-md-7">
 					<div class="card soft">
-						<?= array_reduce($cart, function($r,$o){return $r."<div>$o->name</div>";})?>
+						<?= array_reduce($cart_items, 'cartListTemplate')?>
 					</div>
 				</div>
+				<div class="col-xs-12 col-md-12 col-lg-5">
+				
+					<?= cartTotals()?>
+				  	<div id="checkout_btn" class="form-control">
+		            	<a class="form-button" href="product_checkout.php">Check Out</a>
+		        	</div>
+		        
+				</div>
 			</div>
-			
-			<p><a href="product_checkout.php">Checkout</p>
 
 		</div>
 	</div>

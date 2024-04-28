@@ -1,5 +1,6 @@
 <?php
 include_once "lib/php/functions.php";
+include_once "parts/templates.php";
 $product = makeQuery(makeConn(), "SELECT * FROM `products` WHERE `id`=" .$_GET['id'])[0];
 $images = explode(",", $product->images);
 $image_elements = array_reduce($images, function($r, $o){
@@ -62,7 +63,7 @@ return $r."<img src='/images/$o'/>";
 								<div>
 									<div class="form-select">
 										<select id="product-amount" name="product-amount">
-											<option>Quantity: 1</option>
+											<option>1</option>
 											<option>2</option>
 											<option>3</option>
 											<option>4</option>
@@ -77,14 +78,12 @@ return $r."<img src='/images/$o'/>";
 								</div>
 	
 								<div class="form-control">
-									<a href="product_add_to_cart.php?id=<?= $product->id ?>" class="form-button">Add to Cart</a>
-									<!-- <input type="submit" class="form-button" value="Add to Cart" /> -->
+									<input type="submit" class="form-button" value="Add to Cart" />
+									
 								</div>
 							</div></div>
 
-							<!-- <div class="form-control">
-								<a class="form-button" href="product_list.php">Continue Shopping</a>
-							</div> -->
+						
 						</form>
 					</div>
 				</div>
