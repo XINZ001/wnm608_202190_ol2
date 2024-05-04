@@ -407,7 +407,6 @@ img {
 
 .form-select > select,
 .hotdog input,
-.hotdog,
 .form-button,
 .form-input,
 .form-item {
@@ -465,20 +464,20 @@ img {
 /* Hotdog */
 
 .hotdog{
-    background-color: none;
-    border: var(--border-thickness-regular) solid var(--color-neutral-dark);
-    border-radius: 0.5em;
-    padding: 0.8em 1em;
-    display: flex;
+	background-color: var(--color-lightgrey);
+	border-radius: 2em;
+	margin-bottom: 20px;
+	display: flex;
 }
+
 .hotdog.dark{
-    background-color: var(--color-neutral-dark);
-    color: var(--color-white);
+	background-color: var(--color-black);
+	color:var(--color-white);
 }
-.hotdog.light{
-    background-color: none;
-    border: var(--border-thickness-regular) solid var(--color-neutral-light);
-    color: var(--color-white);
+
+.hotdog.border{
+	background-color: var(--color-white);
+	border:1px solid var(--color-lightgrey);
 }
 
 
