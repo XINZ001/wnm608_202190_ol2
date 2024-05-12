@@ -23,8 +23,8 @@
 			</div>
 
 			<div class="display-flex" style="gap: 20px;">
-				<div class="form-button"><a href="product_list.php">Continue Shopping</a></div>		
-				<div class="form-button" ><a href="product_cart.php">Go to Cart</a></div>	
+			<a class="form-button" href="product_list.php">Continue Shopping</a>
+			<a class="form-button" href="product_cart.php">Go to Cart</a>		
 			</div>
 		</div>
 	</main>

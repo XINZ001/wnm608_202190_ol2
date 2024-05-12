@@ -278,3 +278,29 @@ h3.product-description{
 .cart-item-style:last-child {
 	border-bottom: none;
 }
+
+.prodict-edit-list {
+	width: 380px;
+}
+.prodict-edit-list-container{
+	flex-wrap: wrap;
+	align-content: center;
+	justify-content: center;
+}
+.individual-product-edit{
+	width: 100%;
+	padding-left:16px ;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+
+
+
+
+
+

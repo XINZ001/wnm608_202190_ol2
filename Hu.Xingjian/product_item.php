@@ -123,6 +123,13 @@ return $r."<img src='/images/$o'/>";
 		
 	</main>	
 
+	<div class="container">
+			<h2>Recomanded Products</h2>
+			<?php 
+			recommendedSimilar($product->category,$product->id);
+			?>
+		</div>
+
 
 </body>
 

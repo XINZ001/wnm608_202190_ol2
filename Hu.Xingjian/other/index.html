@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+
+	<link rel="stylesheet" href="lib/css/styleguide.css">
+	<link rel="stylesheet" href="lib/css/gridsystem.css">
+	<link rel="stylesheet" href="css/storetheme.css">
+
+	<!-- header>h1+p -->
+	<header class="navbar">
+		<div class="container display-flex flex-align-center">
+			<div class="flex-none">
+				<h1>ROCK BOBA</h1>
+			</div>
+			<div class="flex-stretch"></div>
+			<nav class="flex-none nav">
+				<ul class="container display-flex">
+					<li class="tag"><a href="#article1">Products</a></li>
+					<li class="tag"><a href="#article2">Story</a></li>
+					<li class="tag"><a href="#article3">About</a></li>
+					<li class="tag"><a href="#article4">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+
+	</header>
+
+
+</head>
+
+<body>
+	
+
+</div>
+
+	<div class="view-window" style="background-image: url('img/img_01.png');">
+		
+	</div>
+
+	<!-- .container>article#article$.article*4>h2{Article $}+div.article-body>p*3>lorem40 -->
+	<div class="container">
+		<div class="card soft">
+			<h2>Grid</h2>
+			<div class="grid gap xs-small md-medium">
+					<div class="col-xs-6">column 6</div>
+					<div class="col-xs-6">column 6</div>
+				</div>
+				
+				<div class="grid gap xs-small md-medium">
+					<div class="col-xs-3">column 3</div>
+					<div class="col-xs-6">column 6</div>
+					<div class="col-xs-3">column 3</div>
+				</div>
+		</div>
+
+	</div>
+
+	<div class="container">
+		<div class="card soft">
+			<h2>Responsive Grid</h2>
+			<div class="grid">
+					<div class="col-xs-12 col-md-6">column 6</div>
+					<div class="col-xs-12 col-md-6">column 6</div>
+				</div>
+				
+				<div class="grid">
+					<div class="col-xs-4">column 4</div>
+					<div class="col-xs-4">column 4</div>
+					<div class="col-xs-4">column 4</div>
+				</div>
+		</div>
+
+	</div>
+
+	<div class="container">
+		<div class="grid gap xs-small md-medium">
+			<!-- .col-xs-6.col-md-3*4>.card>{card} -->
+			<div class="col-xs-6 col-md-3">
+				<div class="card soft">
+					<img src="https://via.placeholder.com/500" class="media-image">
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<div class="card soft">
+					<img src="https://via.placeholder.com/500" class="media-image">
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<div class="card soft">
+					<img src="https://via.placeholder.com/500" class="media-image">
+				</div>
+			</div>
+			<div class="col-xs-6 col-md-3">
+				<div class="card soft">
+					<img src="https://via.placeholder.com/500" class="media-image">
+				</div>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="container">
+		<div>
+			<h1 style="margin-top: 1em;">
+				Featured Items
+			</h1>
+		</div>
+		<div>
+			<div class="container display-flex" style="gap: 20px;">
+					<div class="card close flex-stretch">
+						<div class="display-flex" style="flex-direction: column;">
+							<div class="flex-stretch"><img src="img/boba_01.png"></div>
+							<div class="flex-none lable">
+								<div class="display-flex" style="gap: 5px; flex-direction: column;" >
+									<h3>Matcha with Fresh Milk<h3>
+									<h3 style="color: var(--color-neutral-medium);">$7.25<h3>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="card close flex-stretch">
+						<div class="display-flex" style="flex-direction: column;">
+							<div class="flex-stretch"><img src="img/boba_02.png"></div>
+							<div class="flex-none lable">
+								<div class="display-flex" style="gap: 5px; flex-direction: column;" >
+									<h3>Icy Strawberry<h3>
+									<h3 style="color: var(--color-neutral-medium);">$6.95<h3>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="card close flex-stretch">
+						<div class="display-flex" style="flex-direction: column; ">
+							<div class="flex-stretch"><img src="img/boba_03.png"></div>
+							<div class="flex-none lable">
+								<div class="display-flex" style="gap: 5px; flex-direction: column;" >
+									<h3>Class Milk Tea<h3>
+									<h3 style="color: var(--color-neutral-medium);">$6.95<h3>
+								</div>
+							</div>
+						</div>
+					</div>
+			</div>
+		</div>
+
+		<div>
+			<h1 style="margin-top: 1em;">
+				Reviews
+			</h1>
+			<h3 style="color:var(--color-neutral-medium);">3K+ Ratings 34 Reviews</h3>
+		</div>
+
+		<article id="review1" class="display-flex card soft" style="flex-direction: column; gap: 10px;">
+			<div class="flex-stretch"><div class="display-flex flex-align-center">
+							<div class="flex-stretch"><h2>Elizabeth 5</h2></div>
+							<div class="display-flex flex-none" style="gap:10px">
+								<div class="flex-stretch tags"><h3>⭑⭑⭑⭑⭑</h3></div>
+								<div class="flex-stretch" style="color: var(--color-neutral-medium);"><h3>4/12/22</h3></div>
+							</div>
+						</div></div>
+			<div class="flex-stretch"><div class="article-body">
+							<p>With added ice cream, that Orem Ice is my new go-to for a summer treat</p>
+						</div></div>
+			<div >
+				<img class="card light" src="img/boba_04.png" style="width:30%; margin:0;">
+			</div>
+		</article>
+		
+		<article id="review2" class="display-flex card soft" style="flex-direction: column; gap: 10px;">
+			<div class="flex-stretch"><div class="display-flex flex-align-center">
+							<div class="flex-stretch"><h2>Christine</h2></div>
+							<div class="display-flex flex-none" style="gap:10px">
+								<div class="flex-stretch tags"><h3>⭑⭑⭑⭑⭐︎</h3></div>
+								<div class="flex-stretch" style="color: var(--color-neutral-medium);"><h3>4/1/22</h3></div>
+							</div>
+						</div></div>
+			<div class="flex-stretch"><div class="article-body">
+							<p>I ordered the Okinawa Pearl Milk Tea and it's a regular of mine at Sharetea, although this order seemed watered down.
+							</p>
+						</div></div>
+			<div >
+				<img class="card light" src="img/boba_05.png" style="width:30%; margin:0;">
+			</div>
+		</article>
+	
+
+		<article id="review3" class="display-flex card soft" style="flex-direction: column; gap: 10px;">
+			<div class="flex-stretch"><div class="display-flex flex-align-center">
+							<div class="flex-stretch"><h2>Grace L</h2></div>
+							<div class="display-flex flex-none" style="gap:10px">
+								<div class="flex-stretch tags"><h3>⭑⭑⭑⭑⭑</h3></div>
+								<div class="flex-stretch" style="color: var(--color-neutral-medium);"><h3>1/27/22</h3></div>
+							</div>
+						</div></div>
+			<div class="flex-stretch"><div class="article-body">
+							<p>I'm a regular here-Order about 6 drink per week. They always make the drink great! I recommend the Passion fruit, Organe & Grapefruit!</p>
+						</div></div>
+			<div >
+				<img class="card light" src="img/boba_06.png" style="width:30%; margin:0;">
+			</div>
+		</article>
+	
+
+
+</body>
+</html>
