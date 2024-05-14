@@ -9,7 +9,7 @@
 	
 	<?php include "parts/navbar.php"; ?>
 
-	<div class="container">
+	<div class="container margint">
 		<div class="card soft">
 			<div class="col-xs-12 col-md-7">
 			<div class="checkOutForm">

@@ -18,7 +18,7 @@ switch($_GET['action']){
 
 	case 'delete-cart-item':
 	 $_SESSION['cart'] = array_filter($_SESSION['cart'],function($o){return $o->id!=$_POST['id'];});
-     header("location:cart.php");
+     header("location:product_cart.php");
   	break;
 
 	case 'reset-cart':

@@ -9,7 +9,7 @@
 	
 	<?php include "parts/navbar.php"; ?>
 
-	<div class="container">
+	<div class="container margint">
 		<div class="card soft">
 			<h2>Thank You For Your Purchase!</h2>
 			<p><a href="product_list.php">Continue Shopping</a></p>

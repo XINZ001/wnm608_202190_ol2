@@ -27,7 +27,7 @@ include_once "parts/templates.php";
 	
 	<?php include "parts/navbar.php"; ?>
 
-	<div class="container">
+	<div class="container margint">
 		
 			<h2>Product List</h2>
 

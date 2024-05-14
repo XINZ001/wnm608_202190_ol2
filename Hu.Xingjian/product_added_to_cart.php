@@ -15,7 +15,7 @@
 </head>
 <body>
 	<?php include "parts/navbar.php" ?>
-	<main class="container">
+	<main class="container margint">
 		<div class="card soft display-flex vertical" style="gap: 40px;">
 			<div>
 				<h2>You Added <?= $product->name ?> To Your Cart</h2>

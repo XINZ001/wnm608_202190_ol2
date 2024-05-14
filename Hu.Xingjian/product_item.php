@@ -27,7 +27,7 @@ return $r."<img src='/images/$o'/>";
 	<?php include "parts/navbar.php"; ?>
 
 	<main>
-		<div class="container">
+		<div class="container margint">
 			<div class="container">
 				<div class="grid gap">
 					<div class="col-xs-12 col-md-5 product-item">

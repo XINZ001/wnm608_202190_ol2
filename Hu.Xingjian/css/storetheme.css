@@ -9,10 +9,12 @@
 	--color-neutral-light:#eee;
 	--color-neutral-medium:#999;	
 	--color-neutral-dark:#555;
+	--color-bg:#D8CDBE;
 }
 
 body {
-	background-color: var(--color-offwhite);
+	margin-top: 50px;
+	background-color: var(--color-bg);
 	padding-bottom: 4em;
 }
 
@@ -36,11 +38,7 @@ body {
 
 
 
-@media(max-width:700px) {
-	.navbar .display-flex{
-		display: block;
-	}
-}
+
 
 
 @media(max-width:800px) {
@@ -152,8 +150,6 @@ body {
 	    transform: none;
 	 	 padding: 0;
 	}
-
-
 
 }
 
@@ -295,9 +291,34 @@ h3.product-description{
 	align-items: center;
 }
 
+.menu-button label {
+    display: none;
+}
 
+@media (max-width: 600px) {
+    .navbar .display-flex {
+        flex-wrap: wrap;
+    }
 
+    .navbar .nav {
+        width: 100%;
+        display: none;
+    }
 
+    .navbar .nav-flex ul {
+        display: block;
+    }
+
+    .menu-button label {
+        display: block;
+        padding: 0 1em;
+        cursor: pointer;
+    }
+
+    .navbar .nav.active {
+        display: block;
+    }
+}
 
 
 
